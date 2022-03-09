@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Online Stationary Service</title>
+   <!-- <link rel="stylesheet" href="CSS/style.css"> -->
+   <link rel="stylesheet" media="screen and (max-width: 970px)" href="CSS/phone.css">
+   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+   <style>
+      * {
+         margin: 0px;
+         padding: 0px;
+      }
+
+      html {
+         scroll-behavior: smooth;
+      }
+
+      #navbar {
+         display: flex;
+         position: fixed;
+      }
+
+      #logo {
+         margin: 10px 23px;
+
+      }
+
+      #logo img {
+         height: 80px;
+         width: 80px;
+         border: 0px solid black;
+         border-radius: 50%;
+
+      }
+
+      #navbar ul {
+         display: flex;
+
+      }
+
+      #navbar::before {
+         content: "";
+         background-color: rgb(169, 111, 223);
+         opacity: 0.7;
+         position: absolute;
+         height: 90%;
+         width: 2000px;
+         z-index: -1;
+      }
+
+      #navbar ul li {
+         list-style: none;
+         margin: 35px 10px;
+      }
+
+      #navbar ul li a {
+         text-decoration: none;
+         display: block;
+         color: black;
+         border-radius: 20px;
+         padding: 5px 10px;
+         border: 0px solid gray;
+         font-family: 'Baloo 2';
+
+
+      }
+
+      #navbar ul li a:hover {
+
+         background-color: rgb(199, 118, 149);
+
+      }
+
+      #home {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         height: 400px;
+      }
+
+      #home::before {
+         height: 95%;
+         position: absolute;
+         width: 100%;
+         content: "";
+         background: url('img/bg1.png') no-repeat center center/cover;
+         z-index: -1;
+         opacity: 0.5;
+
+      }
+
+      #home h1 {
+
+         margin-top: 300px;
+         font-family: 'Baloo 2';
+      }
+
+      #home p {
+         text-align: center;
+         width: 100%;
+         margin: 5px 0px;
+         font-family: 'Baloo 2';
+      }
+
+      .btn {
+         margin: 15px 0px;
+         border-radius: 13px;
+         border: 1px solid black;
+         border-color: aquas;
+         background-color: rgb(196, 172, 218);
+         font-family: 'Baloo 2';
+      }
+
+      .btn:hover {
+         background-color: rgb(212, 250, 250);
+         cursor: pointer;
+      }
+
+      #services-container {
+         margin-top: 120px;
+         /*  position: ;*/
+         background-color: rgb(163, 120, 204);
+         padding-bottom: 40px;
+
+      }
+
+      #services {
+         margin: 0px 34px;
+         display: flex;
+
+      }
+
+      .h-primary-container {
+         display: block;
+         width: 300px;
+         margin: auto;
+         font-size: 40px;
+         padding-top: 50px;
+         font-family: 'Baloo 2';
+      }
+
+      .h-secondary-container {
+         display: block;
+         width: 50%;
+         margin: auto;
+         font-size: 25px;
+         text-align: center;
+         font-family: 'Baloo 2';
+      }
+
+      .box {
+         border: 2px solid brown;
+         padding: 30px 10px;
+         margin: 30px 10px;
+         border-radius: 28px;
+         background: #f2f2f2;
+         font-family: 'Baloo 2';
+
+
+      }
+
+      .box img {
+         height: 160px;
+         margin: auto;
+         padding: 10px 10px;
+         display: block;
+      }
+
+      .box p {
+         text-align: center;
+      }
+
+      /* #client-section {
+        position: relative;
+     
+      }*/
+
+      #client-section::before {
+         content: "";
+         position: absolute;
+         background: url('img/bg4.jpg')no-repeat center center/cover;
+         z-index: -1;
+         width: 100%;
+         height: 368px;
+         opacity: 0.2;
+
+      }
+
+      #clients {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin: 0px 0px;
+      }
+
+      #clients img {
+
+         width: 200px;
+         padding: 25px 50px;
+         height: auto;
+      }
+
+      #contact {
+         position: relative;
+      }
+
+      #contact::before {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         background: url('img/bg7.jpg')no-repeat center center/cover;
+         z-index: -1;
+         opacity: 0.3;
+      }
+
+      #contact-box {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding-bottom: 34px;
+         font-family: 'Baloo 2';
+      }
+
+      #contact-box input,
+      #contact-box textarea {
+         width: 100%;
+         padding: 0.2rem;
+         border-radius: 10px;
+         background-color: rgb(206, 217, 219);
+         font-family: 'Baloo 2';
+
+
+      }
+
+
+      #contact-box form {
+         padding: 0.5rem;
+      }
+
+      .btn2 {
+         display: block;
+         margin: auto;
+         border-radius: 10px;
+         border: 1px solid rgb(82, 158, 158);
+         background-color: rgb(113, 184, 184);
+         font-family: 'Baloo 2';
+      }
+
+      .btn2:hover {
+         background-color: rgb(189, 158, 218);
+         cursor: pointer;
+      }
+
+      footer {
+         background-color: rgb(189, 161, 216);
+         display: flex;
+         padding: 5px;
+         justify-content: center;
+         font-family: 'Baloo 2';
+      }
+   </style>
+</head>
+
+<body>
+   <nav id="navbar">
+      <div id="logo">
+         <img src="img/img2.jpg" alt="Online Stationary Service.com">
+      </div>
+      <ul>
+         <li class="item"><a href="#home">Home</a></li>
+         <li class="item"><a href="#services-container">Services</a></li>
+         <li class="item"><a href="#client-section">Our Clients</a></li>
+         <li class="item"><a href="#contact">Contact Us</a></li>
+      </ul>
+   </nav>
+   <section id="home">
+      <h1 class="h-primary">Welcome to My Online Stationary/Gadgets Store</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptas, cupiditate aliquam unde tempora
+         quaerat saepe adipisci exercitationem tenetur dicta labore debitis ipsum velit quisquam, iure ut architecto.
+         Odit quam ratione asperiores!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore mollitia nostrum similique cum. Voluptate,
+         facere quidem!</p>
+      <button class="btn">Order Now</button>
+   </section>
+
+   <section id="services-container">
+      <h1 class="h-primary-container">Our Services</h1>
+      <div id="services">
+         <div class="box">
+            <img src="img/bg5.jpg" alt="">
+            <h2 class="h-secondary-container">Stationary</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, et harum? Necessitatibus inventore,
+               cupiditate ipsum, ab officiis, earum explicabo perferendis quas molestias quibusdam quo? Placeat hic
+               libero alias aperiam unde, cumque quas.</p>
+         </div>
+         <div class="box">
+            <img src="img/bg2.jpg" alt="">
+            <h2 class="h-secondary-container">Gadgets</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, et harum? Necessitatibus inventore,
+               cupiditate ipsum, ab officiis, earum explicabo perferendis quas molestias quibusdam quo? Placeat hic
+               libero alias aperiam unde, cumque quas.</p>
+         </div>
+         <div class="box">
+            <img src="img/bg6.png" alt="">
+            <h2 class="h-secondary-container">Product Delivery</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, et harum? Necessitatibus inventore,
+               cupiditate ipsum, ab officiis, earum explicabo perferendis quas molestias quibusdam quo? Placeat hic
+               libero alias aperiam unde, cumque quas.</p>
+         </div>
+      </div>
+   </section>
+   <section id="client-section">
+      <h1 class="h-primary-container">Our Clients</h1>
+      <div id="clients">
+         <div class="client-item">
+            <img src="img/logo2.png" alt="">
+         </div>
+         <div class="client-item">
+            <img src="img/logo3.png" alt="">
+         </div>
+         <div class="client-item">
+            <img src="img/logo5.png" alt="">
+         </div>
+      </div>
+   </section>
+   <section id="contact">
+      <h1 class="h-primary-container">Contact Us</h1>
+      <div id="contact-box">
+
+         <form action="xyz.php">
+            <div class="form-group">
+               <label for="name">Name: </label>
+               <input type="text" text="name" id="name" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+               <label for="email">Email: </label>
+               <input type="text" text="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+               <label for="Phone">Phone: </label>
+               <input type="Phone" text="Phone" id="Phone" placeholder="Enter your Phone">
+            </div>
+            <div class="form-group">
+               <label for="Message">Message: </label>
+               <textarea name="Message" id="Message" cols="30" rows="3"></textarea>
+            </div>
+            <button class="btn2">Submit</button>
+      </div>
+   </section>
+   <footer>
+      <div class="center">
+         Copyright &copy; www.MyOnlineStationary.com All rights reserved
+      </div>
+
+   </footer>
+
+</body>
+
+</html>
